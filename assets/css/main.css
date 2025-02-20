@@ -1,0 +1,167 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #f4f4f9;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.org-chart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px; /* Increased gap between levels */
+  padding: 40px; /* Increased padding */
+  z-index: 2;
+}
+
+.level {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Increased gap between nodes */
+  flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.node {
+  position: relative;
+  padding: 20px 30px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  min-width: 150px; /* Ensure consistent width */
+  margin: 10px; /* Added margin to prevent overlap */
+}
+
+.node:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.node:hover .glow {
+  opacity: 1;
+}
+
+/* Icons */
+.icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Level 1: CEO */
+.level-1 .node {
+  background: linear-gradient(135deg, #ff6f61, #ffcc00);
+}
+
+/* Level 2: Executives */
+.level-2 .node {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+/* Level 3: Teams */
+.level-3 .node {
+  background: linear-gradient(135deg, #6e48aa, #9d50bb);
+}
+
+/* Level 4: Sub-Teams */
+.level-4 .node {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
+}
+
+.modal-content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+  background: #0072ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.modal-content button:hover {
+  background: #005bb5;
+}
+
+/* SVG Lines */
+.connector line {
+  stroke-width: 2;
+}
+
+/* Unique Line Colors for Each Division */
+.connector .ceo-line {
+  stroke: #ff6f61;
+}
+
+.connector .cto-line {
+  stroke: #00c6ff;
+}
+
+.connector .coo-line {
+  stroke: #ff9a9e;
+}
+
+.connector .cfo-line {
+  stroke: #6e48aa;
+}
+
+.connector .head-data-line {
+  stroke: #fbc2eb;
+}
