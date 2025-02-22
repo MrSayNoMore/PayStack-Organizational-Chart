@@ -1,0 +1,124 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #f4f4f9;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.org-chart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  z-index: 2;
+}
+
+.level {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.node {
+  position: relative;
+  padding: 15px 25px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.node:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.node:hover .glow {
+  opacity: 1;
+}
+
+.ceo {
+  background: linear-gradient(135deg, #ff6f61, #ffcc00);
+  color: white;
+}
+
+.executive {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+}
+
+.manager {
+  background: linear-gradient(135deg, #6e48aa, #9d50bb);
+  color: white;
+}
+
+.team {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: white;
+}
+
+.sub-team {
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  color: white;
+}
+
+.specialist {
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  color: white;
+}
+
+.individual {
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+  color: white;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* AOS Animations */
+[data-aos] {
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
